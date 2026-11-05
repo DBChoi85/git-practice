@@ -4,7 +4,6 @@ jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-      - name: Check environment
       - run: |
           echo "Current directory:"
           pwd
