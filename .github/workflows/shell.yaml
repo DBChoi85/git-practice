@@ -4,7 +4,8 @@ jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-      - run: |
+      - name: Check environment
+        run: |
           echo "Current directory:"
           pwd
           echo "File list:"
