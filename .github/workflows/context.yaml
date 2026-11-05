@@ -1,0 +1,22 @@
+name: Contexts
+on: push
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "${{ github.actor }}"
+    steps:
+      - name: GitHub Context
+        run: |
+          echo "Repository: ${{ github.repository }}"
+          echo "Actor: ${{ github.actor }}"
+          echo "Event: ${{ github.event_name }}"
+          echo "Branch: ${{ github.ref_name }}"
+          echo "Commit: ${{ github.sha }}"
+      - name: Runner Information
+        run: |
+          echo "Runner: ${{ runner.name }}"
+          echo "OS: ${{ runner.os }}"
+          echo "Architecture: ${{ runner.arch }}"
+          echo "Environment: ${{ runner.environment }}"
+          echo "Temp: ${{ runner.temp }}"
