@@ -4,5 +4,5 @@ jobs:          # 잡 정의
   hello:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello, world"
+      - run: echo "Hello, world!!"
       - uses: actions/checkout@v4
