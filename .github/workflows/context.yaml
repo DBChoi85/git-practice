@@ -1,9 +1,9 @@
-name: Contexts
-on: push
-jobs:
-  print:
-    runs-on: ubuntu-latest
-    steps:
+name: Contexts  #workflow ID
+on: push # event trigger
+jobs: # job
+  print: # job id, runner id name, 사용자 임의 정의 가능
+    runs-on: ubuntu-latest # runner 실행 환경 설정
+    steps: # runner's task
       - run: echo "${{ github.actor }}"
       - name: GitHub Context
         run: |
