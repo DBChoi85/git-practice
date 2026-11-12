@@ -8,13 +8,17 @@ jobs:
       - name: Create Sample File
         run: |
           echo "Hello GitHub Actions" > sample.txt
-      - uses: actions/checkout@v5
-     # 2. 해시 생성
+
+      # 2. 해시 생성
       - name: Hash Test
         env:
           RESULT_HASH: "${{ hashFiles('sample.txt') }}"
           RESULT_ALL: "${{ hashFiles('*.txt') }}"
           RESULT_MISSING: "${{ hashFiles('missing.txt') }}"
-          RESULT_YAML: "${{ hashFiles('.github/workflows/*.yaml') }}"
         run: printenv | grep '^RESULT_' | sort
-
+      
+      - uses: actions/checkout@v5
+      - name: GitHub File Hash
+        env:
+          RESULT_YAML: "${{ hashFiles('.github/workflows/*.yaml') }}"
+        run: printenv | grep '^RESULT_'
