@@ -15,5 +15,6 @@ jobs:
           RESULT_HASH: "${{ hashFiles('sample.txt') }}"
           RESULT_ALL: "${{ hashFiles('*.txt') }}"
           RESULT_MISSING: "${{ hashFiles('missing.txt') }}"
+          RESULT_YAML: "${{ hashFiles('.github/workflows/*.yaml') }}"
         run: printenv | grep '^RESULT_' | sort
 
