@@ -20,7 +20,7 @@ jobs:
           echo "Less: ${{ 10 < 5 }}"
           echo "Greater Equal: ${{ 10 >= 10 }}"
           echo "Less Equal: ${{ 10 <= 20 }}"
-          echo "Type Error: ${{ false == 0 }}"
+          echo "Type Error: ${{ false == 1 }}"
 
       # 3. 그룹핑 (Grouping)
       - name: Grouping
