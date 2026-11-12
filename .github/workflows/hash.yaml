@@ -8,8 +8,8 @@ jobs:
       - name: Create Sample File
         run: |
           echo "Hello GitHub Actions" > sample.txt
-
-      # 2. 해시 생성
+      - uses: actions/checkout@v5
+     # 2. 해시 생성
       - name: Hash Test
         env:
           RESULT_HASH: "${{ hashFiles('sample.txt') }}"
